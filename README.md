@@ -54,9 +54,9 @@ The Servo Motor used in this project is:
 JX PDI-6225MG-300
 ```
 
-The original Hand i2 model did not have enough space for this Servo Motor.
+In my print and assembly configuration, the original parts did not fit the JX PDI-6225MG-300 cleanly.
 
-So I created and reprinted a modified version with the Servo Supporter section removed.
+So I created and reprinted a modified version with the Servo Supporter section removed to better fit my build.
 
 <p align="center">
   <img width="386" height="386" alt="image" src="https://github.com/user-attachments/assets/509baa15-84fd-46f1-8942-5ca758c8d4bd" />
@@ -145,6 +145,8 @@ I manually adjusted the Spring length and Tendon tension for each finger by pull
 
 # Servo Calibration
 
+[Servo Calibration Code](arduino/servo_calibration/servo_calibration.ino)
+
 Before connecting the Fishing Line, the Servo Motors must first be moved to the same reference angle.
 
 If the Servos start from different positions when the Tendons are connected, the fingers may have different ranges of motion or excessive tension.
@@ -208,6 +210,8 @@ In this version, I did not use a separate 16 Channel Servo Driver.
 
 Instead, the five Servo Motors were controlled directly through the Arduino PWM Pins.
 
+> ⚠️ **Power Note:** Do not power all five servo motors directly from the Arduino 5V pin. Use a separate power supply with sufficient current capacity for the servos, and connect the servo power GND and Arduino GND together.
+
 ```text
 Power Source
      │
@@ -239,6 +243,8 @@ There are two main test programs.
 
 ## 1. Individual Finger Control
 
+[View Arduino Code](arduino/individual_finger_control/individual_finger_control.ino)
+
 By entering a number from `1 ~ 5` in the Serial Monitor, each finger can be controlled independently.
 
 ```text
@@ -254,6 +260,8 @@ Entering the same number again changes that finger to the opposite state.
 ---
 
 ## 2. Number Gesture Test
+
+[View Arduino Code](arduino/number_gesture_test/number_gesture_test.ino)
 
 By entering a number from `1 ~ 5` in the Serial Monitor, the robotic hand forms the corresponding number gesture.
 
