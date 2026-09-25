@@ -52,8 +52,8 @@ https://inmoov.fr/hand-i2/
 JX PDI-6225MG-300
 ```
 
-원본 Hand i2 모델에는 해당 Servo Motor가 그대로 들어가지 않았습니다. 
-그래서 Servo Supporter 부분을 제거한 모델을 새롭게 만들어 다시 출력했습니다.
+제가 사용한 출력물과 조립 환경에서는 원본 부품에 JX PDI-6225MG-300 Servo Motor가 깔끔하게 맞지 않았습니다.
+그래서 제 조립 구조에 맞도록 Servo Supporter 부분을 제거한 모델을 새롭게 만들어 다시 출력했습니다.
 <p align="center">
   <img width="386" height="386" alt="image" src="https://github.com/user-attachments/assets/509baa15-84fd-46f1-8942-5ca758c8d4bd" />
   <img width="386" height="386" alt="image" src="https://github.com/user-attachments/assets/d7334ee6-e0d2-47aa-b73c-115c40b2beb8" />
@@ -134,6 +134,8 @@ Spring → Finger Return
 
 # Servo Calibration
 
+[Servo Calibration Code](arduino/servo_calibration/servo_calibration.ino)
+
 Fishing Line을 연결하기 전에 Servo Motor의 기준 각도를 먼저 맞춰야 합니다.
 
 Servo의 초기 위치가 서로 다른 상태에서 Tendon을 연결하면 손가락의 움직임 범위가 달라지거나 과도한 장력이 발생할 수 있습니다.
@@ -196,6 +198,8 @@ Servo Motor는 약 **6V** 전원을 사용하도록 구성했습니다.
 
 이번 버전에서는 별도의 16 Channel Servo Driver를 사용하지 않고 Arduino의 PWM Pin으로 5개의 Servo Motor를 직접 제어했습니다.
 
+> ⚠️ **전원 주의:** 5개의 Servo Motor를 Arduino의 5V Pin에서 직접 구동하지 마세요. Servo에는 충분한 전류를 공급할 수 있는 별도 전원을 사용하고, Servo 전원의 GND와 Arduino GND는 공통으로 연결해야 합니다.
+
 ```text
 Power Source
      │
@@ -226,6 +230,8 @@ Arduino의 `Servo.h` 라이브러리를 사용해 기본적인 손가락 동작�
 
 ## 1. Individual Finger Control
 
+[Arduino Code 보기](arduino/individual_finger_control/individual_finger_control.ino)
+
 Serial Monitor에서 `1 ~ 5`를 입력하면 각각의 손가락을 개별적으로 제어할 수 있습니다.
 
 ```text
@@ -241,6 +247,8 @@ Serial Monitor에서 `1 ~ 5`를 입력하면 각각의 손가락을 개별적으
 ---
 
 ## 2. Number Gesture Test
+
+[Arduino Code 보기](arduino/number_gesture_test/number_gesture_test.ino)
 
 Serial Monitor에서 `1 ~ 5`를 입력하면 해당 숫자에 맞는 손 모양을 표현합니다.
 
