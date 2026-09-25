@@ -16,6 +16,7 @@ void loop() {
   if (Serial.available() > 0) {
     // 시리얼 포트에서 정수(숫자)를 읽어옴.
     int angle = Serial.parseInt();
+    angle = constrain(angle, 0, 180); // 안전하게 0~180도 범위로 제한
 
     Serial.print("입력된 각도: ");
     Serial.println(angle);
