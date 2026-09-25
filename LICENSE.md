@@ -1,12 +1,12 @@
 # License and Attribution
 
-This repository contains a modified build based on the **InMoov Hand i2** project by Gaël Langevin / InMoov.
+This repository contains two types of material with different license terms.
 
-## InMoov-derived 3D models
+## 1. InMoov-derived 3D models
 
-The InMoov Hand and its downloadable parts are released under the **Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)** license.
+This project is based on the **InMoov Hand i2** by Gaël Langevin / InMoov.
 
-Accordingly, 3D models in this repository that are derived from the InMoov Hand i2 are shared under the same license conditions.
+The InMoov-derived 3D models and modifications in this repository follow the original project's **Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)** license.
 
 Original project:
 https://inmoov.fr/inmoov-hand/
@@ -14,12 +14,18 @@ https://inmoov.fr/inmoov-hand/
 License:
 https://creativecommons.org/licenses/by-nc/3.0/
 
-Please retain attribution to the original InMoov project when redistributing or modifying derived files, and do not use those files for commercial purposes unless you have the appropriate permission from the original rights holder.
+When sharing or modifying InMoov-derived files, please keep attribution to the original InMoov project and follow the non-commercial requirement of the original license.
 
-## Arduino code
+## 2. Arduino code
 
-No separate license is granted for the Arduino code in this repository unless explicitly stated in the relevant file.
+The Arduino source code in the `arduino/` directory is released under the **MIT License**.
 
-## Notes
+See:
 
-This notice is intended to preserve the licensing and attribution requirements of the original InMoov project. If you plan to redistribute, remix, or use any derived files, please review the original InMoov license terms as well.
+`arduino/LICENSE`
+
+This means you may use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Arduino code, provided that the MIT copyright and license notice are included.
+
+## Note
+
+The MIT License applies only to the Arduino code written for this repository. It does **not** replace or override the license of InMoov-derived 3D models or other third-party materials.
